@@ -1,0 +1,14 @@
+/*qwe*/
+p{  
+    font-size: 14px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: wider;
+    color:#663399/*rgba(19, 95, 52, 1)*/;
+    background-color: yellow;
+    text-transform:uppercase;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    opacity:0.75;
+}
