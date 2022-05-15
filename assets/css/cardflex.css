@@ -64,6 +64,7 @@ body{
     border-radius: var(--radius) var(--radius) 0px 0px;
 }
 
+<<<<<<< HEAD
 .info_container{
     height: 65vh;
     position: relative;
@@ -126,3 +127,18 @@ p{
     font-size: 1.5vh;
     margin-top: 1.5vh;
 }
+=======
+.user_img_container{
+    width: 200px;
+    height:200px;
+    border: 5 px solid white;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.user_img_container > img{
+    width: inherit;
+    height: inherit;
+}
+
+>>>>>>> 4ddc36d23e06554a64182aae54dcbf24a0e1baad
