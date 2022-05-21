@@ -55,14 +55,23 @@
 
 // star('$',10);
 
-// 2. Greeting
-function greetName(userName = prompt('Ваше имя?')){
-    let greeting = 'Привет';
-    console.log(greeting + ', ' + userName + '!')
-}
-greetName();
+// 1. ConsoleVar
+function consoleVar(){
+    let vInt=11, vBool=true, vStr1='"java script"', vStr2='"100"';
+    console.log(vInt);
+    console.log(vBool);
+    console.log(vStr1);
+    console.log(vStr2);
+};
+consoleVar();
 
 
+// // 2. Greeting
+// function greetName(userName = prompt('Ваше имя?')){
+//     let greeting = 'Привет';
+//     console.log(greeting + ', ' + userName + '!')
+// }
+// greetName();
 
 // // 3. четверть часа
 
