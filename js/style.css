@@ -1,4 +1,39 @@
-table, th, td{
+table, tbody  td{
     border: 1px black dotted;
     border-collapse: collapse;
+    padding: 5px;
 }
+
+thead th, tfoot th{
+    border: 1px wheat dotted;
+    padding: 5px;
+}
+
+tbody tr:nth-child(even) td:nth-child(even){
+background-color: aqua;
+}
+
+tbody tr:nth-child(even) td:nth-child(odd){
+    background-color:brown;
+}
+    
+tbody tr:nth-child(odd) td:nth-child(even){
+    background-color:yellow;
+}
+    
+tbody tr:nth-child(odd) td:nth-child(odd){
+    background-color:green;
+}
+        
+
+tbody tr:nth-child(odd){
+    background-color: coral;
+}
+
+thead, tfoot tr:nth-child(odd){
+    color: wheat;
+    background-color: black;
+}
+
+
+    
