@@ -1,39 +1,67 @@
-table, tbody  td{
-    border: 1px black dotted;
-    border-collapse: collapse;
-    padding: 5px;
+*{
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
-thead th, tfoot th{
-    border: 1px wheat dotted;
-    padding: 5px;
+.card{
+    position: relative;
+    cursor: pointer;
 }
 
-tbody tr:nth-child(even) td:nth-child(even){
-background-color: aqua;
+.container .card .part_form{
+    width: 300px;
+    height: 200px;
+    transition: 1s;
+    border: 1px solid black;
 }
 
-tbody tr:nth-child(even) td:nth-child(odd){
-    background-color:brown;
-}
-    
-tbody tr:nth-child(odd) td:nth-child(even){
-    background-color:yellow;
-}
-    
-tbody tr:nth-child(odd) td:nth-child(odd){
-    background-color:green;
-}
-        
-
-tbody tr:nth-child(odd){
-    background-color: coral;
+.container .card .part_form.part1{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: gray;
+    transform: translateY(100px);
 }
 
-thead, tfoot tr:nth-child(odd){
-    color: wheat;
-    background-color: black;
+.container .card:hover .part_form.part1{
+    background-color: red;
+    transform: translateY(0);
+
 }
 
+.container .card .part_form.part1 .content{
+    opacity: 0.5;
+}
 
-    
+.container .card:hover .part_form.part1 .content{
+    opacity: 1;
+}
+
+.container .card .part_form.part2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transform: translateY(-100px);
+}
+
+.container .card:hover .part_form.part2{
+    transform: translateY(0);
+
+}
+
+.container .card .part_form.part2 .content a{
+    text-decoration: none;
+    padding: 10px;
+    /* border: 1px solid black; */
+    display: inline-block;
+    /* margin: 10px 0 0; */
+}
