@@ -1,119 +1,34 @@
-// prompt('2+2') == 4 ? alert('+'):alert('-')
+// let ar = ['a', 'b', 'c', 'd', 'e']
+// let i=0;
+// while (i++ < ar.length) console.log(i-1,ar[i-1]); 
 
-// let i=1, sum=0,answ, res;
-// // for(i=1;i<=19;i=i+2){sum = sum + i};
- 
-// // do {answ=prompt('2+2')} while (answ!=4)
+// let ar = [1, 2, 3, 4, 5]
+// // while (i++ < ar.length) 
+// for (i = ar.length-1; i>=0; i--) {
+//         // ar[i-1]*=2;
+//         console.log(i, ar[i], ar[i]%2 ? ar[i]:0, ar[i]%2!=false ? 0:ar[i]);
+//     } 
 
-// while (i<20){sum=sum+i;i=i+2}
-// alert(sum);
-
-// function add(a,b){return Number(a)+Number(b)};
-// function sub(a,b){return a-b};
-// function mult(a,b){return a*b};
-// function devi(a,b){return a/b};
-// function print(res){console.log(res)}
-
-// let a,b,c;
-// a = prompt('enter a');
-// b = prompt('enter b');
-// // do {
-// // c = prompt('choose act, 1-4');
-// // switch (c) {
-// //     case 1: 
-// //             print(add(a,b));
-// //             break;
-// //     case 2:
-// //             print(sub(a,b));
-// //             break;
-// //     case 3:
-// //             print(mult(a,b));
-// //             break;
-// //     case 4:
-// //             print(devi(a,b));
-// //             break;
-// //     default: console.log('try againe')
-// //     }
-// // } while (c!=5);
-// console.log(add(a,b));
-// console.log(sub(a,b));
-// console.log(mult(a,b));
-// console.log(devi(a,b));
-
-
-// function fn_1(num,mas){
-//     for (i = 1; i <= num; i++) {console.log(mas + ', ' + i)}
+let arr = [10, 20, 50, 100, 0, 0, 300, 0, 500, 600, 0, 0, ]
+// for (i = 0; i < arr.length; i++) {arr[i] == 0 ? console.log(i) : true}
+// let res=0;
+// for (i = 0; i < arr.length; i++) {arr[i] == 0 ? res++ : true};
+// до первого нуля
+// for (i = 0; i < arr.length; i++) {
+//     if (arr[i] == 0)  break;
+//     console.log(arr[i]); 
+//     res++
 // };
-// fn_1(5, 'hello');
+// console.log(res);
 
-// function star(symb,num){
-//     while (0 < num) {
-//         console.log(symb.repeat(num));
-//         num--;
-//     }
-// };
-
-// star('$',10);
-
-// 1. ConsoleVar
-function consoleVar(){
-    let vInt=11, vBool=true, vStr1='"java script"', vStr2='"100"';
-    console.log(vInt);
-    console.log(vBool);
-    console.log(vStr1);
-    console.log(vStr2);
-};
-consoleVar();
-
-
-// // 2. Greeting
-// function greetName(userName = prompt('Ваше имя?')){
-//     let greeting = 'Привет';
-//     console.log(greeting + ', ' + userName + '!')
-// }
-// greetName();
-
-// // 3. четверть часа
-
-// function quarterHour(minutes = prompt('Минуты')){
-// let res = (minutes/60) % 1;
-// switch(true){
-//     case res < 0.25: 
-//         console.log('1-я четверть часа');
-//         break; 
-//     case (res >= 0.25 && res < 0.5):
-//         console.log('2-я четверть часа'); 
-//         break; 
-//     case (res >= 0.5 && res < 0.75):
-//         console.log('3-я четверть часа');
-//         break; 
-//     default: 
-//         console.log('4-я четверть часа');
-//         break;
-//     }
-// };
-// quarterHour();
-
-// // 4. кратность
-// function multNumber(minLim = prompt('Нижняя граница =')
-//                  ,maxLim = prompt('Верхняя граница =')
-//                  ,multNumb = prompt('Кратность =')){
-//     while (minLim <= maxLim) {
-//         minLim % multNumb == 0 ? console.log(minLim) : 1;
-//         minLim++; 
-//     };
-// }
-// multNumber();
-
-// // 5. умножение
-// function multSeries(minLim = prompt('Нижняя граница =')
-//              ,maxLim = prompt('Верхняя граница =')){
-// let result = 1;
-// for(minLim; minLim <= maxLim; minLim ++){result *= minLim}   
-// console.log(result);
-// };
-// multSeries();
-
-
-
+// сумма соседених эллементов
+// 1+2 2+3
+// 1+2 3+4
+let sum1=[];
+// for (i = 0; i < (arr.length - 1); i++) console.log(i, arr[i], arr[i+1], arr[i]+arr[i+1])
+// for (i = 0; i < (arr.length - 1); i+=2) console.log(i, arr[i], arr[i+1], arr[i]+arr[i+1])
+for (i = 0, j=0; i < (arr.length - 1); i+=2,j++) {
+    sum1[j]=arr[i]+arr[i+1];
+}
+console.log(sum1);
 
