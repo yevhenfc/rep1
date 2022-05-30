@@ -70,7 +70,6 @@
 //     return userArr;
 // };
 // console.log(funNegativeToZero(arr));
-let arr = [4, 0, -1, -5, 3.14, 0, 0, 100, -4, 2.45, 4, 0, 4];
 // return elements less limit
 // function fArrayLim(userArr, lim = prompt('enter lim', 10)) {
 // for (i = 0; i < userArr.length; i++) userArr[i] <= lim ? console.log(userArr[i]) : 1
@@ -88,23 +87,65 @@ let arr = [4, 0, -1, -5, 3.14, 0, 0, 100, -4, 2.45, 4, 0, 4];
 // }; 
 // console.log(fArraySqr(arr));
 
-function negat(userArr) {
-    let res1 = [];
-    for (i = 0, j = 0; i < userArr.length; i++) userArr[i] < 0 ? (res1[j] = userArr[i], j++) : false;
-    return(res1);
-}; 
+// function negat(userArr) {
+//     let res1 = [];
+//     for (i = 0, j = 0; i < userArr.length; i++) userArr[i] < 0 ? (res1[j] = userArr[i], j++) : false;
+//     return(res1);
+// }; 
 
-function sumArr(userArr) {
-    let res = 0;
-    for (i = 0; i < userArr.length; i++) userArr[i] < 0 ? res += userArr[i] : 0;
-    return(res);
-}
+// function sumArr(userArr) {
+//     let res = 0;
+//     for (i = 0; i < userArr.length; i++) userArr[i] < 0 ? res += userArr[i] : 0;
+//     return(res);
+// }
 
-function fArraySqr(userArr){
-        let qwe = negat(userArr) , sumw;    
-        sumw = sumArr(qwe);
-        return(sumw);
-    }; 
+// function fArraySqr(userArr){
+//         let qwe = negat(userArr) , sumw;    
+//         sumw = sumArr(qwe);
+//         return(sumw);
+//     }; 
 
-    console.log(fArraySqr(arr));
+//     console.log(fArraySqr(arr));
+// ******************************************************************************************************
+// ******************************************************************************************************
+let arr = [4, 0, -1, -5, 3.14, 0, 0, 100, -4, 2.45, 4, 0, 4];
+//find words > 4 symbols
+const words = ['hello','Vasya','Oh','fox','JS','array'];
 
+let checkLen = (item) => item.length > 4 ? true : false;
+
+let res = [], i = 0;
+//words.forEach(function(item, j, arr) {item.length > 4 ? (res[i] = item, i++) : false});
+// words.forEach(checkLen(item) == true ? (res[i] = item, i++) : false);
+
+// console.log(res);
+// ******************************************************************************************************
+/*
+1. Сумма нечетных элементов массивов
+2. Вывести индексы нулевых эелементов массива
+3. 2 массива соединить и преобразовать в строку
+4. отфильтровать массив, удалив все нули
+*/ 
+
+//1. Сумма нечетных элементов массивов
+//1-1
+// let a = [1, 2, 3, 4, 5, 6];
+// let resOdd = a.filter(isOdd = (value) => value % 2 == 1);
+// let resSum1 = resOdd.reduce(sumNum = (a, b) => a + b)
+// console.log(resSum1);
+// //1-2
+// let resSum2 = (a) => a.filter((el, i ) => (el%2)).reduce((SumNum, val) => SumNum + val);
+// console.log(resSum2(a));
+// //1-3
+// let resSum3 = (a) => {
+//     let res = 0;
+//     a.forEach(el => el %2 != 0 ? res += el : 0);
+//     return res;
+// };
+// console.log(resSum3(a));
+
+//2. Вывести индексы нулевых эелементов массива
+let a = [1, 2, 0, 3, 4, 5, 0, 6];
+let res = (a) => a.forEach(el, i) => {
+    
+});
