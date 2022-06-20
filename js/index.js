@@ -1,69 +1,55 @@
-// let work = {
-//     year: 2015,
-//     salary: 100,
-//     stag: 0, 
-    
-//     calcStag: function () {
-//         this.stag = (new Date().getFullYear()) - this.year
-//         return this.stag;
-//     },
-    
-//     setSalary: function(pr = 15) {
-//         if (this.stag >= 3) this.salary *= (1 + pr / 100)
-//         return this.salary
-//     }
-// }
-// ;
-// console.log(work.calcStag());
-// console.log(work.setSalary());
+function makeElement (tagClassName, tagClassType = "class", tagType = 'div') {
+    let el = document.createElement(tagType);
+    el.setAttribute(tagClassType, tagClassName);
+    return el;    
+}
 
+class User{
+    constructor(Name, Job){
+        this.Name = Name;
+        this.Job  = Job;
+    }
+}
 
-// let arrT = {
-//     start: 0,
-//     end: 0,
-//     arr: [],
-//     genArr: function(start, n, step){
-//         let res = [], i;
-//         this.start = start;
-//         this.end = start + (n - 1) * step;
-//         for (i = 0; i < n; i++) res[i] = (i + 1)  * step;
-//         return res;
-//     },
+let AG = new User('Gomez Addams','The Head Of Addams Family'); 
 
-//     setArr: function(start, n, step){
-//         let res = [], i;
-//         this.start = start;
-//         this.end = start + (n - 1) * step;
-//         for (i = 0; i < n; i++)  res.push((i + 1)  * step); //res[i] = (i + 1)  * step;
-//         this.arr = res;
-//     },
-// }; 
-    
-// // console.log(arrT.genArr(10, 5, 10));
-// console.log(arrT.setArr(10, 5, 10));
+// userContainerCard 
+document.body.append(makeElement("userContainerCard"));
+// colorCardContainer
+document.querySelector('.userContainerCard').append(makeElement("colorCardContainer"));
+// userInfoContainer
+document.querySelector('.userContainerCard').append(makeElement("userInfoContainer"));
+// userPhoto
+document.querySelector('.userInfoContainer').append(makeElement("userPhoto"));
+// img
+document.querySelector('.userPhoto').append(makeElement("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwuPxeszmtNz32f5hUfXS4rev29qIQG6MKdEsJ8_9YrD-A7FecfvWI-9YuF3YeB9wUsns&usqp=CAU","src",'img'));
+document.querySelector('img').setAttribute('alt', 'photo');
+// infoContainer
+document.querySelector('.userInfoContainer').append(makeElement("infoContainer"));
+// userName
+document.querySelector('.infoContainer').append(makeElement("userName", "class",'p'));
+document.querySelector('.userName').textContent = AG.Name;
+// userJob
+document.querySelector('.infoContainer').append(makeElement("userJob", "class",'p'));
+document.querySelector('.userJob').textContent = AG.Job;
+// buttonFollow
+document.querySelector('.infoContainer').append(makeElement("buttonFollow"));
+// iconButton
+document.querySelector('.buttonFollow').append(makeElement("iconButton"));
+// fa
+document.querySelector('.iconButton').append(makeElement("#", "href",'a'));
+document.querySelector('a').setAttribute('class', 'fa-brands fa-google-plus-g');// iconButton
+// follow
+document.querySelector('.buttonFollow').append(makeElement("follow"));
+// Follow
+document.querySelector('.follow').append(document.createElement('p'));
+document.querySelector('.follow > p').innerText = 'Follow';
+// followers
+document.querySelector('.infoContainer').append(makeElement("followers", "class",'p'));
+document.querySelector('.followers').innerText = '357 Followers';
 
+let sriptf = document.createElement('script');
+scripf.setAttribute('src','https://kit.fontawesome.com/efae9c7c5c.js');
+scripf.setAttribute('crossorigin','anonymous');
+document.body.append(scriptf);
 
-objBuy = {
-    totalSum: 0,
-    sale: 0,
-    setSum: function(value) {return this.totalSum=value}, 
-    addSale: function(){
-        switch(true){
-            case this.totalSum >= 1000: this.totalSum *=.95; this.sale = 5; break;
-            case this.totalSum >= 500:  this.totalSum *=.97; this.sale = 3; break;
-            default:                                         this.sale = 0; break;
-        }
-    },
-};
-
-objBuy.setSum(100);
-objBuy.addSale();
-console.log(objBuy);
-
-objBuy.setSum(750);
-objBuy.addSale();
-console.log(objBuy);
-
-objBuy.setSum(1500);
-objBuy.addSale();
-console.log(objBuy);
