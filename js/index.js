@@ -13,4 +13,12 @@ function handleChangeColor2 (e) {
 
 }
 
-divArray.forEach( el => el.addEventListener('click', handleChangeColor1));
+
+divArray.forEach( el => { 
+    el.addEventListener('click', handleChangeColor1);
+    console.log(el, el.firstElementChild)
+    //el.addEventListener('click', el.firstChild.remove());
+    
+    el.firstElementChild.addEventListener('click', () => el.remove())
+    }
+);
