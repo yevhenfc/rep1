@@ -1,24 +1,21 @@
-const divArray = document.querySelectorAll('.box');
+const box = document.getElementById('test');
+const clientXY = document.getElementById('ClientXY');
+const offsetXY = document.getElementById('OffsetXY');
+// var clXY = document.getElementsByClassName('XY')[0];
+// var osXY = document.getElementsByClassName('XY')[1];
+var clXY = document.querySelector('.clXY');
+var osXY = document.querySelector('.osXY');
 
-function handleChangeColor1 (e) {
-    this.style.background = 'black';
-    this.removeEventListener('click', handleChangeColor1);
-    this.addEventListener('click', handleChangeColor2);
-}
+console.log(clXY);
 
-function handleChangeColor2 (e) {
-    this.style.background = 'white';
-    this.removeEventListener('click', handleChangeColor2);
-    this.addEventListener('click', handleChangeColor1);
-
-}
-
-
-divArray.forEach( el => { 
-    el.addEventListener('click', handleChangeColor1);
-    console.log(el, el.firstElementChild)
-    //el.addEventListener('click', el.firstChild.remove());
+const outXY = (event) => {
+    //box.firstElementChild.innerText=`Client XY = ${event.clientX}, ${event.clientY}`;
+    clXY.innerText = `Client XY = ${event.clientX}, ${event.clientY}`;
+    osXY.innerText = `Offset XY = ${event.offsetX}, ${event.offsetY}`;
     
-    el.firstElementChild.addEventListener('click', () => el.remove())
-    }
-);
+    // console.log('Client XY = ',event.clientX, event.clientY);
+    // console.log('Offset XY = ',event.offsetX, event.offsetY);
+    // console.log('Type event:',event.type,'Target:', event.target);
+};
+
+box.addEventListener('click', outXY);
