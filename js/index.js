@@ -1,21 +1,35 @@
-const box = document.getElementById('test');
-const clientXY = document.getElementById('ClientXY');
-const offsetXY = document.getElementById('OffsetXY');
-// var clXY = document.getElementsByClassName('XY')[0];
-// var osXY = document.getElementsByClassName('XY')[1];
-var clXY = document.querySelector('.clXY');
-var osXY = document.querySelector('.osXY');
+const sliderEl = document.getElementById('slider');
+const leverEl = document.getElementById('lever');
 
-console.log(clXY);
+let cXY = document.querySelector('.ClXY');
+let oXY = document.querySelector('.OsXY');
+let sft = document.querySelector('.sft');
+let shiftX =0;
 
-const outXY = (event) => {
-    //box.firstElementChild.innerText=`Client XY = ${event.clientX}, ${event.clientY}`;
-    clXY.innerText = `Client XY = ${event.clientX}, ${event.clientY}`;
-    osXY.innerText = `Offset XY = ${event.offsetX}, ${event.offsetY}`;
-    
-    // console.log('Client XY = ',event.clientX, event.clientY);
-    // console.log('Offset XY = ',event.offsetX, event.offsetY);
-    // console.log('Type event:',event.type,'Target:', event.target);
-};
+// нажать 
+leverEl.addEventListener('mousedown', handleMouseDown);
 
-box.addEventListener('click', outXY);
+function handleMouseDown(e){
+    e.preventDefault();
+    shiftX = e.clientX - leverEl.getBoundingClientRect().left;
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+}
+
+function handleMouseMove(e){
+    let left = e.clientX - shiftX - sliderEl.getBoundingClientRect().left;
+    //let left = leverEl.getBoundingClientRect().left - sliderEl.getBoundingClientRect().left;
+
+    let rigth = sliderEl.offsetWidth - leverEl.offsetWidth; 
+    if(left < 0) left = 0;
+    if(left > rigth) left = rigth - 4;
+    leverEl.style.left = left + 'px';
+    cXY.innerText = `ClientX = ${e.clientX}`;
+    oXY.innerText = `OffsetX = ${e.offsetX}`;
+    sft.innerText = leverEl.getBoundingClientRect().left;//`Shift = ${left}`;
+}
+
+function handleMouseUp(e){
+    document.removeEventListener('mouseup', handleMouseUp);
+    document.removeEventListener('mousemove', handleMouseMove);
+}
