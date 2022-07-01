@@ -1,17 +1,49 @@
-#slider{
-    width: 200px;
-    height: 20px;
-    border: 2px solid black;
-    border-radius: 5px;
+.main_box { 
+    height: 300px;
+    width: 600px;
 }
 
-#lever{
-    width: 20px;
-    height: 31px;
-    border: 1px solid gray;
-    border-radius: 2px;
-    background-color: blue;
-    cursor: pointer;
-    position: relative; /*top, left, rigth, bottom*/
-    top: -7px;
+.main_box_style { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+ 
+
+    background-color: lightyellow;
+    border: 2px solid black;
+    border-radius: 10px;    
+}
+
+.img_box { 
+    height: 290px;
+    width: 50px;
+    border-radius: 10px;  
+    margin: 5px;  
+    border: 2px solid black;
+    display: flex;
+    position: relative;
+
+}
+
+.img_box#img1 { 
+    width: 350px;
+}
+
+.img_box_style { 
+    background-color: lightblue;
+    transition: 1s ease;
+
+}
+
+.txt{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    size: 30px;
+}
+
+.txt_style{
+    /* visibility: hidden; */
+    animation-delay: 2s 
 }
