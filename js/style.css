@@ -1,49 +1,9 @@
-.main_box { 
-    height: 300px;
-    width: 600px;
-}
-
-.main_box_style { 
+.slideContainer{
     display: flex;
+    justify-content: space-around;
+}
+li{
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
- 
+    margin: 20px;
 
-    background-color: lightyellow;
-    border: 2px solid black;
-    border-radius: 10px;    
-}
-
-.img_box { 
-    height: 290px;
-    width: 50px;
-    border-radius: 10px;  
-    margin: 5px;  
-    border: 2px solid black;
-    display: flex;
-    position: relative;
-
-}
-
-.img_box#img1 { 
-    width: 350px;
-}
-
-.img_box_style { 
-    background-color: lightblue;
-    transition: 1s ease;
-
-}
-
-.txt{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    size: 30px;
-}
-
-.txt_style{
-    /* visibility: hidden; */
-    animation-delay: 2s 
 }

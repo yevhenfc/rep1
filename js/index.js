@@ -1,78 +1,26 @@
-const img1 = document.getElementById('img1');
-const img2 = document.getElementById('img2');
-const img3 = document.getElementById('img3');
-const img4 = document.getElementById('img4');
-const img5 = document.getElementById('img5');
+imagesArray = [
+'https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=600'
+,'https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&w=600'
+,'https://images.pexels.com/photos/2113566/pexels-photo-2113566.jpeg?auto=compress&cs=tinysrgb&w=600'
+,'https://images.pexels.com/photos/4101555/pexels-photo-4101555.jpeg?auto=compress&cs=tinysrgb&w=600'
+,'https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=600'
+,'https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&cs=tinysrgb&w=600'
+,'https://images.pexels.com/photos/414122/pexels-photo-414122.jpeg?auto=compress&cs=tinysrgb&w=600'
+]
 
-// нажать 
-img1.addEventListener('mousedown', handleMouseDown1);
-img2.addEventListener('mousedown', handleMouseDown2);
-img3.addEventListener('mousedown', handleMouseDown3);
-img4.addEventListener('mousedown', handleMouseDown4);
-img5.addEventListener('mousedown', handleMouseDown5);
+const slider = document.getElementById('slideContainer');
+const slides = makeSlides(imagesArray, 0, 3);
 
-function handleMouseDown1(e){
-    // e.preventDefault();
-    img1.style.width = '350px';
-    img2.style.width = '50px';
-    img3.style.width = '50px';
-    img4.style.width = '50px';
-    img5.style.width = '50px';
-    img1.firstElementChild.style.transition = '1s';
-    img1.firstElementChild.style.visibility = 'visible';
+function makeSlides(arrImages, startIndex = 0, endIndex = arrImages.lenght) {
+    let slides = [], imgSlide, divSlide, i;
+    for (i = startIndex; i <= endIndex; i++){
+        slides[i] = document.createElement('li');
+        slides[i].setAttribute('class', 'liSlide');
+        divSlide = document.createElement('div');
+        divSlide.setAttribute('class', 'divSlide');
+        imgSlide = document.createElement('img');
+        imgSlide.setAttribute('src', arrImages[i]);
+        divSlide.append(imgSlide);
+        slider.append(divSlide);
+    };
 }
-
-function handleMouseDown2(e){
-    // e.preventDefault(e);
-    img1.style.width = '50px';
-    img2.style.width = '350px';
-    img3.style.width = '50px';
-    img4.style.width = '50px';
-    img5.style.width = '50px';
-}
-
-function handleMouseDown3(e){
-    // e.preventDefault(e);
-    img1.style.width = '50px';
-    img2.style.width = '50px';
-    img3.style.width = '350px';
-    img4.style.width = '50px';
-    img5.style.width = '50px';
-}
-
-function handleMouseDown4(e){
-    // e.preventDefault(e);
-    img1.style.width = '50px';
-    img2.style.width = '50px';
-    img3.style.width = '50px';
-    img4.style.width = '350px';
-    img5.style.width = '50px';
-}
-
-function handleMouseDown5(e){
-    // e.preventDefault(e);
-    img1.style.width = '50px';
-    img2.style.width = '50px';
-    img3.style.width = '50px';
-    img4.style.width = '50px';
-    img5.style.width = '350px';
-}
-
-
-// function handleMouseMove(e){
-//     let left = e.clientX - shiftX - sliderEl.getBoundingClientRect().left;
-//     //let left = leverEl.getBoundingClientRect().left - sliderEl.getBoundingClientRect().left;
-
-//     let rigth = sliderEl.offsetWidth - leverEl.offsetWidth; 
-//     if(left < 0) left = 0;
-//     if(left > rigth) left = rigth - 4;
-//     leverEl.style.left = left + 'px';
-//     cXY.innerText = `ClientX = ${e.clientX}`;
-//     oXY.innerText = `OffsetX = ${e.offsetX}`;
-//     sft.innerText = leverEl.getBoundingClientRect().left;//`Shift = ${left}`;
-// }
-
-// function handleMouseUp(e){
-//     document.removeEventListener('mouseup', handleMouseUp);
-//     document.removeEventListener('mousemove', handleMouseMove);
-// }
