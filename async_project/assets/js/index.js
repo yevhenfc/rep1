@@ -1,8 +1,25 @@
-for (let i = 1; i <= 10; i++) {
-    setTimeout(() => {console.log(i)}, 100);
+const btn = document.getElementById('loadUsers');
+
+// const store = {
+//     error: null,
+// };
+
+btn.onclick = function () {
+    fetch('./assets/data/users.json').then(loadResolve).then(logData).catch(loadReject);
+};
+
+//data to console
+function logData(data){
+    console.log(data);
 }
 
-//+
+// good!
+function loadResolve(response){
+    console.log(response.json());
+    return response.json();
+}
 
-let start = 100, end = 110;
-const timerId = setInterval (() => {start <= end ? console.log(start++) : clearInterval(timerId)}, 100)
+// error , bad ((
+function loadReject(response){
+    console.log(response);
+}
